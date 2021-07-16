@@ -31,6 +31,7 @@ describe(LikeWidgetComponent.name, () => {
   it('Should NOT auto-generate ID during ngOnInit when (@Input id) exists', () => {
     const someId = '2340234093284093284';
     component.id = someId;
+    fixture.detectChanges();
     expect(component.id).toBe(someId);
   });
 

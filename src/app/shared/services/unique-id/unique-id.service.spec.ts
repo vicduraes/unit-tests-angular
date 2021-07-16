@@ -7,6 +7,14 @@ describe(UniqueIdService.name, () => {
     service = new UniqueIdService();
   });
 
+  it(`#${UniqueIdService.prototype.getGenerateUniqueIds.name}
+    should return the number of generateIds when called`, () => {
+    service.generateUniqueIdWithPrefix('app');
+    service.generateUniqueIdWithPrefix('app');
+    service.generateUniqueIdWithPrefix('app');
+    expect(service.getGenerateUniqueIds()).toBe(3);
+  });
+
   it(`#${UniqueIdService.prototype.generateUniqueIdWithPrefix.name}
     should generate id when called with prefix`, () => {
     const id = service.generateUniqueIdWithPrefix('app');
