@@ -1,10 +1,12 @@
 import { UniqueIdService } from './unique-id.service';
+
 describe(UniqueIdService.name, () => {
   let service: UniqueIdService;
 
   beforeEach(() => {
     service = new UniqueIdService();
   });
+
   it(`#${UniqueIdService.prototype.generateUniqueIdWithPrefix.name}
     should generate id when called with prefix`, () => {
     const id = service.generateUniqueIdWithPrefix('app');
